@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Meal Options — BIFF x NESPRESSO HQ Guide</title>
 <meta name="description" content="Restaurant options near Cinema Center, Lavi de Atlan, and Bizup Lounge for the BIFF x NESPRESSO production team.">
+<link rel="stylesheet" href="leaflet.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -50,11 +51,13 @@
         <h2>01 · Cinema Center</h2>
       </div>
 
-      <figure class="map-embed">
-        <div class="map-embed__frame">
-          <iframe src="https://maps.google.com/maps?saddr=35.1711671,129.1271917&daddr=35.1698089,129.1285301+to:35.1685728,129.1297904+to:35.1681592,129.131317+to:35.1722382,129.1303778&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="Map of Cinema Center and nearby restaurant options"></iframe>
-        </div>
-        <figcaption>Cinema Center · Camel Coffee · Menu by Gordon Ramsay · Mom's Touch Chicken &amp; Burger · Sangmu Sushi</figcaption>
+      <div class="map-legend">
+        <span><span class="dot dot--venue"></span> Cinema Center</span>
+        <span><span class="dot dot--meal"></span> Restaurant Option</span>
+      </div>
+      <figure class="mini-map-wrap">
+        <div id="map-cinema" class="mini-map"></div>
+        <figcaption>1 Cinema Center · 2 Camel Coffee · 3 Menu by Gordon Ramsay · 4 Mom's Touch Chicken &amp; Burger · 5 Sangmu Sushi</figcaption>
       </figure>
 
       <div class="grid">
@@ -97,11 +100,13 @@
         <h2>02 · Lavi de Atlan Hotel</h2>
       </div>
 
-      <figure class="map-embed">
-        <div class="map-embed__frame">
-          <iframe src="https://maps.google.com/maps?saddr=35.1610456,129.1614329&daddr=35.1624635,129.1601466+to:35.1623978,129.1601647+to:35.1624205,129.1645061+to:35.1604618,129.1622566&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="Map of Lavi de Atlan Hotel and nearby restaurant options"></iframe>
-        </div>
-        <figcaption>Lavi de Atlan Hotel · CASA BUSANO Haeundae · Galbiga Masitda · Geumsubokguk · OUTBACK Steakhouse</figcaption>
+      <div class="map-legend">
+        <span><span class="dot dot--venue"></span> Lavi de Atlan Hotel</span>
+        <span><span class="dot dot--meal"></span> Restaurant Option</span>
+      </div>
+      <figure class="mini-map-wrap">
+        <div id="map-lavi" class="mini-map"></div>
+        <figcaption>1 Lavi de Atlan Hotel · 2 CASA BUSANO Haeundae · 3 Galbiga Masitda · 4 Geumsubokguk · 5 OUTBACK Steakhouse</figcaption>
       </figure>
 
       <div class="grid">
@@ -144,11 +149,13 @@
         <h2>03 · Bizup Lounge (HQ Office)</h2>
       </div>
 
-      <figure class="map-embed">
-        <div class="map-embed__frame">
-          <iframe src="https://maps.google.com/maps?saddr=35.1638533,129.1570208&daddr=35.1648546,129.1585454+to:35.1639653,129.1572136+to:35.1641662,129.1570185+to:35.1646604,129.1578865&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="Map of Bizup Lounge and nearby restaurant options"></iframe>
-        </div>
-        <figcaption>Bizup Lounge · Geumsong Deokmi · Jeonghui · Mura Ramen · Solsot Haeundae</figcaption>
+      <div class="map-legend">
+        <span><span class="dot dot--venue"></span> Bizup Lounge</span>
+        <span><span class="dot dot--meal"></span> Restaurant Option</span>
+      </div>
+      <figure class="mini-map-wrap">
+        <div id="map-bizup" class="mini-map"></div>
+        <figcaption>1 Bizup Lounge · 2 Geumsong Deokmi · 3 Jeonghui · 4 Mura Ramen · 5 Solsot Haeundae</figcaption>
       </figure>
 
       <div class="grid">
@@ -193,6 +200,35 @@
   </div>
 </footer>
 
+<script src="leaflet.js"></script>
+<script src="hq-maps.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  renderMiniMap("map-cinema", [
+    { kind: "venue", name: "Busan Cinema Center", lat: 35.1711671, lng: 129.1271917, placeId: "ChIJD2H59MOSaDURcTxRbHWyNqI" },
+    { kind: "option", name: "Camel Coffee", lat: 35.1698089, lng: 129.1285301, placeId: "ChIJQRM2AhKTaDUReBLyEODpbZc" },
+    { kind: "option", name: "Menu by Gordon Ramsay", lat: 35.1685728, lng: 129.1297904, placeId: "ChIJiVUYi7mTaDUR4K07MGz1a70" },
+    { kind: "option", name: "Mom's Touch Chicken & Burger", lat: 35.1681592, lng: 129.131317, placeId: "ChIJJa0Ca8eSaDUREAZgBzYd50k" },
+    { kind: "option", name: "Sangmu Sushi", lat: 35.1722382, lng: 129.1303778, placeId: "ChIJlxVCqcGSaDURHMqZ0Rl5FSQ" }
+  ]);
+
+  renderMiniMap("map-lavi", [
+    { kind: "venue", name: "Lavi de Atlan Hotel", lat: 35.1610456, lng: 129.1614329, placeId: "ChIJj1Zdu12NaDURAo5jP4ik_y4" },
+    { kind: "option", name: "CASA BUSANO Haeundae", lat: 35.1624635, lng: 129.1601466, placeId: "ChIJmVcT316NaDUREDvrqjcFI_4" },
+    { kind: "option", name: "Galbiga Masitda", lat: 35.1623978, lng: 129.1601647, placeId: "ChIJlU7-712NaDURm6btcVHrjz0" },
+    { kind: "option", name: "Geumsubokguk", lat: 35.1624205, lng: 129.1645061, placeId: "ChIJb6ju4GeNaDURuR1LsbcI5lw" },
+    { kind: "option", name: "OUTBACK Steakhouse Haeundae", lat: 35.1604618, lng: 129.1622566, placeId: "ChIJPT5toF6NaDURMo-unDQKpow" }
+  ]);
+
+  renderMiniMap("map-bizup", [
+    { kind: "venue", name: "Bizup Lounge Haeundae", lat: 35.1638533, lng: 129.1570208, placeId: "ChIJhYvGLF6NaDUR4ZMSZfjWmqU" },
+    { kind: "option", name: "Geumsong Deokmi", lat: 35.1648546, lng: 129.1585454, placeId: "ChIJBxuGQq2NaDURVrMKGr5SpFA" },
+    { kind: "option", name: "Jeonghui", lat: 35.1639653, lng: 129.1572136, placeId: "ChIJoTW7UQCNaDURY6rFSWMJJmE" },
+    { kind: "option", name: "Mura Ramen", lat: 35.1641662, lng: 129.1570185, placeId: "ChIJJxxTCgCNaDURAH2BiXiFQWM" },
+    { kind: "option", name: "Solsot Haeundae", lat: 35.1646604, lng: 129.1578865, placeId: "ChIJDQ9pyFiNaDURRlzGPj5A_5A" }
+  ]);
+});
+</script>
 <script src="main.js"></script>
 </body>
 </html>

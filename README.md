@@ -17,8 +17,8 @@ Internal production guide site for the HQ team: Schedule, Venue Information, Mea
 
 - `index.html` — landing page with links to all five sections
 - `schedule.html` — team-tab switcher (HQ / Vandy / Photo / VX) with a Day 0–Day 6 column schedule, powered by `schedule-data.js`
-- `venue.html` — a live Google Maps embed showing Cinema Center, HQ Office, HQ Hotel, and Paradise Hotel together, plus hotel details (Lavi de Atlan + Paradise Hotel), HQ office (Bizup Lounge), and office facilities
-- `meal.html` — a live Google Maps embed per area (Cinema Center, Lavi de Atlan Hotel, Bizup Lounge) showing the venue and its restaurant options together, plus restaurant cards that link directly to Google Maps
+- `venue.html` — an interactive map showing Cinema Center, HQ Office, HQ Hotel, and Paradise Hotel together (same map style as the guest site's all-locations map — tap any pin to open it in Google Maps), plus hotel details (Lavi de Atlan + Paradise Hotel), HQ office (Bizup Lounge), and office facilities
+- `meal.html` — an interactive map per area (Cinema Center, Lavi de Atlan Hotel, Bizup Lounge) showing the venue and its restaurant options together, plus restaurant cards that link directly to Google Maps
 - `uber.html` — step-by-step Uber for Business setup and usage guide
 - `what-else-busan.html` — curated maps for off-duty time
 
