@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schedule — BIFF x NESPRESSO HQ Guide</title>
+<meta name="description" content="Day-by-day production schedule for the BIFF x NESPRESSO HQ, Vandy, Photo, and VX teams.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sitebar">
+  <div class="wrap sitebar__row">
+    <a class="sitebar__brand" href="index.html">
+      <img src="logo-dark.png" alt="Nespresso"> HQ Guide
+    </a>
+    <nav class="sitebar__index" aria-label="Section index">
+      <a href="index.html"><span class="idx-no">00</span> Index</a>
+      <a href="schedule.html" class="is-active"><span class="idx-no">01</span> Schedule</a>
+      <a href="venue.html"><span class="idx-no">02</span> Venue</a>
+      <a href="meal.html"><span class="idx-no">03</span> Meal</a>
+      <a href="uber.html"><span class="idx-no">04</span> Uber</a>
+      <a href="what-else-busan.html"><span class="idx-no">05</span> What Else Busan</a>
+    </nav>
+  </div>
+</div>
+
+<header class="page-hero">
+  <div class="wrap">
+    <a class="back-link" href="index.html">&#8592; Back to Index</a>
+    <span class="internal-badge">Internal — HQ Team</span>
+    <p class="eyebrow">01 — Schedule</p>
+    <h1>Production schedule<br>Day 0 – Day 6</h1>
+    <p class="lede">Select a team to see its schedule for each day. Times marked "TBU" or "pending" are still being finalized — check back for updates.</p>
+
+    <div class="team-tabs" id="team-tabs" role="tablist" aria-label="Production teams">
+      <button type="button" class="team-tab is-active" data-team="hq" role="tab" aria-selected="true">HQ</button>
+      <button type="button" class="team-tab" data-team="vandy" role="tab" aria-selected="false">Vandy</button>
+      <button type="button" class="team-tab" data-team="photo" role="tab" aria-selected="false">Photo</button>
+      <button type="button" class="team-tab" data-team="vx" role="tab" aria-selected="false">VX</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="category" id="schedule-body">
+    <div class="wrap">
+      <div class="day-columns" id="day-columns"><!-- rendered by main.js --></div>
+    </div>
+  </section>
+</main>
+
+<footer class="sitefoot">
+  <div class="wrap sitefoot__row">
+    <img src="logo-dark.png" alt="Nespresso">
+    <small>BIFF x NESPRESSO HQ GUIDE — INTERNAL USE ONLY</small>
+  </div>
+</footer>
+
+<script src="schedule-data.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
